@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">FoodDeliveryApp</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="email">Email</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="login">Login</string>
+    <string name="Email">Email</string>
+    <string name="password">Password</string>
+    <string name="Login">Login</string>
+    <string name="Forgot_password">Forgot Password?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="deliver_to_shri">Deliver to Shri</string>
+    <string name="hey_shri_good_afternoon">Hey Shri , Good Afternoon!</string>
+    <string name="search_dishes_restaurants">Search dishes, restaurants</string>
+    <string name="all_categories">All Categories</string>
+    <string name="see_all"><![CDATA[See All >]]></string>
+    <string name="all">All</string>
+    <string name="hot_dog">Hot Dog</string>
+    <string name="burger">Burger</string>
+    <string name="pizza">Pizza</string>
+    <string name="confirm_location">Confirm Location</string>
+    <string name="longitude">Longitude:</string>
+    <string name="latitude">Latitude:</string>
+    <string name="address">Address:</string>
+    <string name="location">Location</string>
+    <string name="rating">Rating</string>
+    <string name="_4_7">4.7</string>
+    <string name="details">Details</string>
+    <string name="Pizza">Pizza</string>
+    <string name="favorite">Favorite</string>
+    <string name="restaurant_logo">Restaurant Logo</string>
+    <string name="uttora_coffe_house">Uttora Coffe House</string>
+    <string name="pizza_calzone_european">Pizza Calzone European</string>
+    <string name="a_calzone_is_an_italian_oven_baked_folded_pizza_it_is_made_with_salted_bread_dough_baked_in_an_oven_and_is_stuffed_with_ingredients_found_in_pizza">A calzone is an Italian oven-baked folded pizza. It is made with salted bread dough, baked in an oven and is stuffed with ingredients found in pizza.</string>
+    <string name="delivery">Delivery</string>
+    <string name="free">Free</string>
+    <string name="delivery_time">Delivery Time</string>
+    <string name="add_to_cart">ADD TO CART</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="_320_inr">320 INR</string>
+    <string name="pepperoni">Pepperoni</string>
+    <string name="tomato">Tomato</string>
+    <string name="cheese">Cheese</string>
+    <string name="ingridients">INGRIDIENTS</string>
+    <string name="_16_quot">16\"</string>
+    <string name="_14_quot">14\"</string>
+    <string name="_10_quot">10\"</string>
+    <string name="size">SIZE:</string>
+    <string name="_20_min">20 min</string>
+    <string name="back">Back</string>
+</resources>
+
+                 
