@@ -49,6 +49,41 @@
     <string name="size">SIZE:</string>
     <string name="_20_min">20 min</string>
     <string name="back">Back</string>
+    <string name="verification">Verification</string>
+    <string name="enter_the_verification_code_sent_to_your_email">Enter the verification code sent to your email.</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="verify">Verify</string>
+    <string name="the_british_restaurant">The British Restaurant</string>
+    <string name="todo">TODO</string>
+    <string name="burger_chicken_wings">Burger - Chicken - Wings</string>
+    <string name="text">4.7</string>
+    <string name="free_delivery">Free Delivery</string>
+    <string name="time">20 min</string>
+    <string name="todo1">TODO</string>
+    <string name="sign_up1">Sign Up</string>
+    <string name="email1">Email</string>
+    <string name="password1">Password</string>
+    <string name="sign_up2">Sign Up</string>
+    <string name="already_have_an_account_login">Already have an account? Login</string>
+    <string name="ingredient">Ingredient</string>
+    <string name="ingredient1">Ingredient</string>
+    <string name="ingredient2">Ingredient</string>
+    <string name="rating_4_7">Rating=4.7</string>
+    <string name="time_20_min">Time = 20 mins</string>
+    <string name="size_10_inch">Size = 10 inch</string>
+    <string name="size_14_inch">Size = 14 inch</string>
+    <string name="size_16_inch">Size = 16 inch</string>
+    <string name="price_320_inr">Price = 320 INR</string>
+    <string name="ingredient_cheese">Cheese</string>
+    <string name="ingredient_tomato">Tomato</string>
+    <string name="ingredient_pepperoni">Pepperoni</string>
+
+
+
+
+
+    <string name="pizza_description">Pizza\n</string>
+
 </resources>
 
                  

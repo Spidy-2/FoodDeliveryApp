@@ -9,7 +9,7 @@
         android:id="@+id/verificationTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Verification"
+        android:text="@string/verification"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Enter the verification code sent to your email."
+        android:text="@string/enter_the_verification_code_sent_to_your_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/verificationTitle" />
 
@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:hint="Verification Code"
+        android:hint="@string/verification_code"
         android:inputType="number"
         app:layout_constraintTop_toBottomOf="@id/verificationMessage" />
 
@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Verify"
+        android:text="@string/verify"
         app:layout_constraintTop_toBottomOf="@id/verificationCodeEditText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

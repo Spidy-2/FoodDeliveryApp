@@ -9,7 +9,7 @@
         android:id="@+id/signupTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
+        android:text="@string/sign_up1"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,25 +20,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:hint="Email"
+        android:hint="@string/email1"
         android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@id/signupTitle" />
+        app:layout_constraintTop_toBottomOf="@id/signupTitle"
+        android:autofillHints="" />
 
     <EditText
         android:id="@+id/signupPasswordEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="Password"
+        android:hint="@string/password1"
         android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/signupEmailEditText" />
+        app:layout_constraintTop_toBottomOf="@id/signupEmailEditText"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/signupButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Sign Up"
+        android:text="@string/sign_up2"
         app:layout_constraintTop_toBottomOf="@id/signupPasswordEditText" />
 
     <TextView
@@ -46,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Already have an account? Login"
+        android:text="@string/already_have_an_account_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/signupButton" />
 

@@ -4,357 +4,368 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
-    <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="16dp">
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/back_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_back"
-            android:contentDescription="@string/back"
-            android:layout_marginEnd="16dp"/>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/details"
-            android:textSize="20sp"
-            android:textColor="#000" android:gravity="center"/>
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-
-    </LinearLayout>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp">
-
-        <FrameLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="200dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="16dp">
 
             <ImageView
-                android:id="@+id/pizza_image"
+                android:id="@+id/back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/back"
+                android:src="@drawable/ic_arrow_back" />
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp">
+
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/pizza_placeholder"
-                android:contentDescription="@string/Pizza" />
+                android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/favorite_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/btn_star_big_off" android:layout_gravity="top|end"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:contentDescription="@string/favorite" />
+                <ImageView
+                    android:id="@+id/pizza_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/pizza_placeholder"
+                    android:contentDescription="@string/pizza" />
 
-        </FrameLayout>
-    </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:id="@+id/favorite_button"
+                    android:layout_width="31dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="top|end"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="@string/favorite"
+                    android:src="@drawable/ic_star" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-            <ImageView
-                android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@android:drawable/ic_menu_call"
-                android:contentDescription="@string/restaurant_logo"
-                android:layout_marginEnd="8dp"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                tools:ignore="UseCompoundDrawables">
+
+
+                <TextView
+                    android:id="@+id/restaurant_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pizza_calzone_european"
+                    android:textSize="16sp"
+                    android:textColor="#666" />
+            </LinearLayout>
+
             <TextView
-                android:id="@+id/restaurant_name"
-                android:layout_width="wrap_content"
+                android:id="@+id/pizza_name"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/uttora_coffe_house"
+                android:text="@string/pizza_calzone_european"
+                android:textSize="24sp"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/pizza_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/pizza_description"
+                android:textSize="14sp"
+                android:textColor="#666"
+                android:layout_marginTop="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/pizza_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rating_4_7"
+                    android:textSize="14sp"
+                    android:textColor="#000"
+                    android:layout_marginEnd="16dp" />
+
+                <ImageView
+                    android:layout_width="47dp"
+                    android:layout_height="53dp"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/delivery"
+                    android:src="@drawable/ic_delivery" />
+
+                <TextView
+                    android:id="@+id/delivery_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/free"
+                    android:textSize="14sp"
+                    android:textColor="#000"
+                    android:layout_marginEnd="16dp" />
+
+                <ImageView
+                    android:layout_width="38dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="4dp"
+                    android:contentDescription="@string/delivery_time"
+                    android:src="@drawable/ic_clock" />
+
+                <TextView
+                    android:id="@+id/delivery_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/time_20_min"
+                    android:textSize="14sp"
+                    android:textColor="#000" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/size"
                 android:textSize="16sp"
-                android:textColor="#666" /> </LinearLayout>
+                android:textColor="#000"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/pizza_name"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <Button
+                    android:id="@+id/button_size_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/size_10_inch"
+                    android:textSize="14sp"
+                    android:textColor="#000"
+                    android:background="#e0e0e0"
+                    android:layout_marginEnd="8dp"
+                    android:minWidth="60dp"
+                    style="?android:attr/buttonBarButtonStyle" />
+
+                <Button
+                    android:id="@+id/button_size_14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/size_14_inch"
+                    android:textSize="14sp"
+                    android:textColor="#000"
+                    android:background="#e0e0e0"
+                    android:layout_marginEnd="8dp"
+                    android:minWidth="60dp"
+                    style="?android:attr/buttonBarButtonStyle" />
+
+                <Button
+                    android:id="@+id/button_size_16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/size_16_inch"
+                    android:textSize="14sp"
+                    android:textColor="#000"
+                    android:background="#e0e0e0"
+                    android:minWidth="60dp"
+                    style="?android:attr/buttonBarButtonStyle" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/pizza_calzone_european"
-            android:textSize="24sp"
-            android:textColor="#000"
-            android:textStyle="bold"
-            android:layout_marginTop="8dp"/>
+            android:orientation="vertical"
+            android:padding="16dp">
 
-        <TextView
-            android:id="@+id/pizza_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/a_calzone_is_an_italian_oven_baked_folded_pizza_it_is_made_with_salted_bread_dough_baked_in_an_oven_and_is_stuffed_with_ingredients_found_in_pizza"
-            android:textSize="14sp"
-            android:textColor="#666"
-            android:layout_marginTop="8dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ingredient"
+                android:textSize="16sp"
+                android:textColor="#000"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_marginEnd="16dp"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_cheese"
+                        android:contentDescription="@string/ingredient_cheese" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cheese"
+                            android:textSize="12sp"
+                            android:textColor="#666" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_marginEnd="16dp"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_tomato"
+                        android:contentDescription="@string/ingredient_tomato" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tomato"
+                            android:textSize="12sp"
+                            android:textColor="#666" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal"
+                        android:layout_marginEnd="16dp"
+                        tools:ignore="UseCompoundDrawables">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@drawable/ic_pepperoni"
+                        android:contentDescription="@string/ingredient_pepperoni" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/pepperoni"
+                            android:textSize="12sp"
+                            android:textColor="#666" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="16dp"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:padding="16dp"
+            android:background="#f0f0f0">
 
             <TextView
-                android:id="@+id/pizza_rating"
+                android:id="@+id/pizza_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/_4_7"
-                android:textSize="14sp"
+                android:text="@string/price_320_inr"
+                android:textSize="24sp"
                 android:textColor="#000"
-                android:layout_marginEnd="16dp"/>
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@android:drawable/ic_menu_send"
-                android:contentDescription="@string/delivery"
-                android:layout_marginEnd="4dp"/>
-            <TextView
-                android:id="@+id/delivery_info"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/free"
-                android:textSize="14sp"
-                android:textColor="#000"
-                android:layout_marginEnd="16dp"/>
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/delivery_time"
-                android:layout_marginEnd="4dp"/>
-            <TextView
-                android:id="@+id/delivery_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/_20_min"
-                android:textSize="14sp"
-                android:textColor="#000" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/size"
-            android:textSize="16sp"
-            android:textColor="#000"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="8dp">
-
-            <Button
-                android:id="@+id/button_size_10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/_10_quot"
-                android:textSize="14sp"
-                android:textColor="#000"
-                android:background="#e0e0e0" android:layout_marginEnd="8dp"
-                android:minWidth="60dp"/>
-
-            <Button
-                android:id="@+id/button_size_14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/_14_quot"
-                android:textSize="14sp"
-                android:textColor="#000"
-                android:background="#e0e0e0"
-                android:layout_marginEnd="8dp"
-                android:minWidth="60dp"/>
-
-            <Button
-                android:id="@+id/button_size_16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/_16_quot"
-                android:textSize="14sp"
-                android:textColor="#000"
-                android:background="#e0e0e0"
-                android:minWidth="60dp"/>
-        </LinearLayout>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ingridients"
-            android:textSize="16sp"
-            android:textColor="#000"
-            android:textStyle="bold" />
-
-        <HorizontalScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+                android:layout_marginEnd="16dp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginEnd="16dp">
+
+                <Button
+                    android:id="@+id/button_quantity_decrease"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="-"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:background="#e0e0e0" />
+
+                <TextView
+                    android:id="@+id/text_quantity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center_horizontal"
-                    android:layout_marginEnd="16dp">
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@android:drawable/ic_menu_crop"  android:contentDescription="Ingredient"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/cheese"
-                        android:textSize="12sp"
-                        android:textColor="#666"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center_horizontal"
-                    android:layout_marginEnd="16dp">
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@android:drawable/ic_menu_crop"  android:contentDescription="Ingredient"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/tomato"
-                        android:textSize="12sp"
-                        android:textColor="#666"/>
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:gravity="center_horizontal"
-                    android:layout_marginEnd="16dp">
-                    <ImageView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:src="@android:drawable/ic_menu_crop"  android:contentDescription="Ingredient"
-                        />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/pepperoni"
-                        android:textSize="12sp"
-                        android:textColor="#666"/>
-                </LinearLayout>
+                    android:text="2"
+                    android:textSize="18sp"
+                    android:textColor="#000"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    tools:ignore="HardcodedText" />
+
+                <Button
+                    android:id="@+id/button_quantity_increase"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:text="+"
+                    android:textSize="16sp"
+                    android:textColor="#000"
+                    android:background="#e0e0e0" />
             </LinearLayout>
-        </HorizontalScrollView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="16dp"
-        android:background="#f0f0f0">
-        <TextView
-        android:id="@+id/pizza_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_320_inr"
-        android:textSize="24sp"
-        android:textColor="#000"
-        android:layout_marginEnd="16dp"
-        android:textStyle="bold"/>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginEnd="16dp">
 
             <Button
-                android:id="@+id/button_quantity_decrease"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:text="@string/minus"
-                android:textSize="16sp"
-                android:textColor="#000"
-                android:background="#e0e0e0"/>
-
-            <TextView
-                android:id="@+id/text_quantity"
-                android:layout_width="wrap_content"
+                android:id="@+id/button_add_to_cart"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="2"
-                android:textSize="18sp"
-                android:textColor="#000"
-                android:paddingStart="8dp"
-                android:paddingEnd="8dp"
-                tools:ignore="HardcodedText" />
-
-            <Button
-                android:id="@+id/button_quantity_increase"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:text="@string/plus"
+                android:layout_weight="1"
+                android:text="@string/add_to_cart"
                 android:textSize="16sp"
-                android:textColor="#000"
-                android:background="#e0e0e0"/>
+                android:textColor="#DED6D9"
+                android:background="#f44336" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/button_add_to_cart"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/add_to_cart"
-            android:textSize="16sp"
-            android:textColor="#fff"
-            android:background="#f44336"  />
     </LinearLayout>
-</LinearLayout>
 </ScrollView>

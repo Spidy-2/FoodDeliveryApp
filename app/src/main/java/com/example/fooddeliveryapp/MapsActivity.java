@@ -119,7 +119,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private void getLocation() {
         LocationRequest mLocationRequest = LocationRequest.create();
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        mLocationRequest.setInterval(10000); // Update location every 10 seconds
+        mLocationRequest.setInterval(10000);
         LocationRequest locationRequest = mLocationRequest.setFastestInterval(5000);
 
         mLocationCallback = new LocationCallback() {

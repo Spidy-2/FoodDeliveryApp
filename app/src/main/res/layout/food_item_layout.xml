@@ -10,13 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/img" />
+        android:src="@drawable/restaurant3"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/restaurantName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="The British Restaurant"
+        android:text="@string/the_british_restaurant"
         android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="8dp" />
@@ -25,7 +26,7 @@
         android:id="@+id/restaurantDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Burger - Chicken  - Wings"
+        android:text="@string/burger_chicken_wings"
         android:layout_marginTop="4dp" />
 
     <LinearLayout
@@ -38,24 +39,24 @@
             android:id="@+id/restaurantRating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="4.7"
+            android:text="@string/text"
             android:drawablePadding="1dp" />
 
         <TextView
             android:id="@+id/restaurantDelivery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Free Delivery"
+            android:text="@string/free_delivery"
             android:drawablePadding="4dp"
-            android:layout_marginLeft="16dp" />
+            android:layout_marginStart="16dp" />
 
         <TextView
             android:id="@+id/restaurantTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="20 min"
+            android:text="@string/time"
             android:drawablePadding="4dp"
-            android:layout_marginLeft="16dp" />
+            android:layout_marginStart="16dp" />
 
     </LinearLayout>
 

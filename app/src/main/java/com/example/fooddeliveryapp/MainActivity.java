@@ -1,58 +1,39 @@
 package com.example.fooddeliveryapp;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.EditText;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.fooddeliveryapp.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FoodItemAdapter adapter;
-
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        RecyclerView recyclerViewFoodItems = findViewById(R.id.restaurantsRecyclerView);
-        EditText editTextSearch = findViewById(R.id.searchBar);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        ArrayList<FoodItem> foodItems = new ArrayList<>();
-        foodItems.add(new FoodItem("Rose Garden Restaurant", "Burger - Chicken - Riche - Wings", R.drawable.burger_restaurant, "4.7", "Free", "20 min"));
-        foodItems.add(new FoodItem("Another Restaurant", "Pizza - Pasta - Italian", R.drawable.pizza_restaurant, "4.5", "$2.99", "30 min"));
+        binding.restaurantsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        recyclerViewFoodItems.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new FoodItemAdapter(this, foodItems);
-        recyclerViewFoodItems.setAdapter(adapter);
+        fetchDataFromApi();
+    }
 
-        editTextSearch.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+    private void fetchDataFromApi() {
+        List<FoodItem> foodItems = new ArrayList<>();
+        foodItems.add(new FoodItem("The British Restaurant", "Burger - Chicken - Wings", R.drawable.restaurant1, "4.7", "Free Delivery", "20 min"));
+        foodItems.add(new FoodItem("Pizza Planet", "Pizza - Italian - Pasta", R.drawable.restaurant2, "4.5", "Free Delivery", "25 min"));
+        foodItems.add(new FoodItem("Burger King", "Burger - Fries - Shake", R.drawable.restaurant3, "4.8", "Free Delivery", "15 min"));
+        foodItems.add(new FoodItem("Sushi Bar", "Sushi - Rolls", R.drawable.restaurant4, "4.6", "Free Delivery", "30 min"));
+        foodItems.add(new FoodItem("Spicy Grill", "BBQ - Wings - Grilled", R.drawable.restaurant5, "4.9", "Free Delivery", "18 min"));
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                adapter.filter(s.toString());
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {}
-        });
-
-        adapter.setOnItemClickListener(position -> {
-
-            if(position == 1){
-                Toast.makeText(MainActivity.this, "Opening Pizza Details", Toast.LENGTH_SHORT).show();
-            }
-
-        });
+        FoodItemAdapter adapter = new FoodItemAdapter(MainActivity.this, foodItems);
+        binding.restaurantsRecyclerView.setAdapter(adapter);
     }
 }
-

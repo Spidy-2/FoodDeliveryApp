@@ -8,7 +8,8 @@ public class FoodItem {
     private final String deliveryInfo;
     private final String deliveryTime;
 
-    public FoodItem(String restaurantName, String foodDescription, int imageResourceId, String rating, String deliveryInfo, String deliveryTime) {
+    public FoodItem(String restaurantName, String foodDescription, int imageResourceId,
+                    String rating, String deliveryInfo, String deliveryTime) {
         this.restaurantName = restaurantName;
         this.foodDescription = foodDescription;
         this.imageResourceId = imageResourceId;
@@ -41,4 +42,3 @@ public class FoodItem {
         return deliveryTime;
     }
 }
-
