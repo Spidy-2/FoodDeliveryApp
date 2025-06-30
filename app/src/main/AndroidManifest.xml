@@ -29,8 +29,16 @@
         <activity android:name=".SignupActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".VerificationActivity" />
+        <activity android:name=".MapsActivity" />
+        <activity android:name=".FoodItemAdapter" />
         <activity android:name=".MainActivity" android:exported="true" />
+
 
     </application>
 
 </manifest>
+
+
+
+
+

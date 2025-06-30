@@ -1,4 +1,6 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -6,24 +8,29 @@
     android:fillViewport="true">
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
+
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="91dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
             android:padding="16dp">
 
             <ImageView
+
                 android:id="@+id/back_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="37dp"
+                android:layout_height="31dp"
                 android:layout_marginEnd="16dp"
                 android:contentDescription="@string/back"
                 android:src="@drawable/ic_arrow_back" />
+
+
 
         </LinearLayout>
 
@@ -311,12 +318,12 @@
 
             <TextView
                 android:id="@+id/pizza_price"
-                android:layout_width="wrap_content"
+                android:layout_width="91dp"
                 android:layout_height="wrap_content"
-                android:text="@string/price_320_inr"
-                android:textSize="24sp"
-                android:textColor="#000"
                 android:layout_marginEnd="16dp"
+                android:text="@string/price_320_inr"
+                android:textColor="#000"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -358,14 +365,16 @@
 
             <Button
                 android:id="@+id/button_add_to_cart"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="95dp"
+                android:layout_height="64dp"
                 android:layout_weight="1"
+                android:background="#f44336"
                 android:text="@string/add_to_cart"
-                android:textSize="16sp"
                 android:textColor="#DED6D9"
-                android:background="#f44336" />
+                android:textSize="16sp" />
         </LinearLayout>
+
+
 
     </LinearLayout>
 </ScrollView>
