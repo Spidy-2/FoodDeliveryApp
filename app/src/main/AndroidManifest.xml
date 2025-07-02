@@ -30,8 +30,9 @@
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".VerificationActivity" />
         <activity android:name=".MapsActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".FoodItemAdapter" android:exported="true" />
+        <activity android:name=".FoodItemAdapter"/>
+        <activity android:name=".MainActivity"  android:exported="true" />
+
 
 
     </application>
