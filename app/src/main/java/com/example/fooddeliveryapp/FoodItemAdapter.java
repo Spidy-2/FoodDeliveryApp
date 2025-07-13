@@ -16,12 +16,12 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodIt
     private final Context context;
     private final List<FoodItem> foodItemList;
 
+    
 
     public FoodItemAdapter(Context context, List<FoodItem> foodItemList) {
         this.context = context;
         this.foodItemList = foodItemList;
     }
-
     @NonNull
     @Override
     public FoodItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

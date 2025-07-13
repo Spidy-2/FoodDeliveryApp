@@ -48,7 +48,7 @@ dependencies {
     implementation(libs.play.services.location)
     implementation(libs.play.services.maps)
 
-    implementation(platform("com.google.firebase:firebase-bom:33.15.0"))
+    implementation(platform("com.google.firebase:firebase-bom:33.16.0"))
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-messaging:24.1.0")
