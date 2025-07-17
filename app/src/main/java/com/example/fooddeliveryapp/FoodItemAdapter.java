@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,8 +18,8 @@ import java.util.List;
 
 public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodViewHolder> {
 
-    private Context context;
-    private List<FoodItem> foodList;
+    private final Context context;
+    private final List<FoodItem> foodList;
 
     public FoodItemAdapter(Context context, List<FoodItem> foodList) {
         this.context = context;
@@ -27,7 +29,7 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodVi
     @NonNull
     @Override
     public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_food, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.food_item_layout, parent, false);
         return new FoodViewHolder(view);
     }
 
@@ -39,7 +41,7 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodVi
         holder.rating.setText(item.getRating());
         holder.deliveryInfo.setText(item.getDeliveryInfo());
         holder.deliveryTime.setText(item.getDeliveryTime());
-
+        
         Glide.with(context)
                 .load(item.getImageUrl())
                 .into(holder.image);
@@ -57,10 +59,6 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodVi
         public FoodViewHolder(@NonNull View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.restaurantName);
-            description = itemView.findViewById(R.id.restaurantDescription);
-            rating = itemView.findViewById(R.id.ratingText);
-            deliveryInfo = itemView.findViewById(R.id.deliveryInfo);
-            deliveryTime = itemView.findViewById(R.id.deliveryTime);
             image = itemView.findViewById(R.id.restaurantImage);
         }
     }

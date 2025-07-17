@@ -1,5 +1,6 @@
 package com.example.fooddeliveryapp;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -13,6 +14,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -41,8 +43,9 @@ public class MainActivity extends AppCompatActivity {
         fetchDataFromFirestore();
     }
 
+    @SuppressLint("SetTextI18n")
     private void loadUserProfile() {
-        String uid = mAuth.getCurrentUser().getUid();
+        String uid = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
 
         db.collection("users")
                 .document(uid)
@@ -50,14 +53,13 @@ public class MainActivity extends AppCompatActivity {
                 .addOnSuccessListener(documentSnapshot -> {
                     if (documentSnapshot.exists()) {
                         String email = documentSnapshot.getString("email");
-                        binding.userEmailText.setText("Logged in as: " + email);
+                        binding.userEmailText.setText(getString(R.string.logged_in_as) + email);
                     }
                 })
-                .addOnFailureListener(e -> {
-                    Toast.makeText(MainActivity.this, "Failed to load user info", Toast.LENGTH_SHORT).show();
-                });
+                .addOnFailureListener(e -> Toast.makeText(MainActivity.this, "Failed to load user info", Toast.LENGTH_SHORT).show());
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private void fetchDataFromFirestore() {
         db.collection("FoodItems")
                 .get()
@@ -78,8 +80,6 @@ public class MainActivity extends AppCompatActivity {
                     }
                     adapter.notifyDataSetChanged();
                 })
-                .addOnFailureListener(e -> {
-                    Toast.makeText(MainActivity.this, "Failed to load food items", Toast.LENGTH_SHORT).show();
-                });
+                .addOnFailureListener(e -> Toast.makeText(MainActivity.this, "Failed to load food items", Toast.LENGTH_SHORT).show());
     }
 }

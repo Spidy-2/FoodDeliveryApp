@@ -84,6 +84,7 @@
 
     <string name="pizza_description">Pizza\n</string>
     <string name="loading_user_info">Loading user info...</string>
+    <string name="logged_in_as">"Logged in as: "</string>
 
 </resources>
 
