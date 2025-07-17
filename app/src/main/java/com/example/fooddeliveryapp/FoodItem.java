@@ -1,18 +1,22 @@
 package com.example.fooddeliveryapp;
 
 public class FoodItem {
-    private final String restaurantName;
-    private final String foodDescription;
-    private final int imageResourceId;
-    private final String rating;
-    private final String deliveryInfo;
-    private final String deliveryTime;
+    private String restaurantName;
+    private String foodDescription;
+    private String imageUrl;
+    private String rating;
+    private String deliveryInfo;
+    private String deliveryTime;
 
-    public FoodItem(String restaurantName, String foodDescription, int imageResourceId,
+    public FoodItem() {
+        // Required empty constructor for Firebase
+    }
+
+    public FoodItem(String restaurantName, String foodDescription, String imageUrl,
                     String rating, String deliveryInfo, String deliveryTime) {
         this.restaurantName = restaurantName;
         this.foodDescription = foodDescription;
-        this.imageResourceId = imageResourceId;
+        this.imageUrl = imageUrl;
         this.rating = rating;
         this.deliveryInfo = deliveryInfo;
         this.deliveryTime = deliveryTime;
@@ -26,8 +30,8 @@ public class FoodItem {
         return foodDescription;
     }
 
-    public int getImageResourceId() {
-        return imageResourceId;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
     public String getRating() {

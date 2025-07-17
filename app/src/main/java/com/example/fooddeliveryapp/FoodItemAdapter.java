@@ -2,59 +2,66 @@ package com.example.fooddeliveryapp;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.fooddeliveryapp.databinding.FoodItemLayoutBinding;
+import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodItemViewHolder> {
+public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodViewHolder> {
 
-    private final Context context;
-    private final List<FoodItem> foodItemList;
+    private Context context;
+    private List<FoodItem> foodList;
 
-    
-
-    public FoodItemAdapter(Context context, List<FoodItem> foodItemList) {
+    public FoodItemAdapter(Context context, List<FoodItem> foodList) {
         this.context = context;
-        this.foodItemList = foodItemList;
+        this.foodList = foodList;
     }
+
     @NonNull
     @Override
-    public FoodItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater inflater = LayoutInflater.from(context);
-        FoodItemLayoutBinding binding = FoodItemLayoutBinding.inflate(inflater, parent, false);
-        return new FoodItemViewHolder(binding);
+    public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_food, parent, false);
+        return new FoodViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull FoodItemViewHolder holder, int position) {
-        FoodItem foodItem = foodItemList.get(position);
-        FoodItemLayoutBinding binding = holder.binding;
+    public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
+        FoodItem item = foodList.get(position);
+        holder.name.setText(item.getRestaurantName());
+        holder.description.setText(item.getFoodDescription());
+        holder.rating.setText(item.getRating());
+        holder.deliveryInfo.setText(item.getDeliveryInfo());
+        holder.deliveryTime.setText(item.getDeliveryTime());
 
-        binding.restaurantName.setText(foodItem.getRestaurantName());
-        binding.restaurantDetails.setText(foodItem.getFoodDescription());
-        binding.restaurantRating.setText(foodItem.getRating());
-        binding.restaurantDelivery.setText(foodItem.getDeliveryInfo());
-        binding.restaurantTime.setText(foodItem.getDeliveryTime());
-        binding.restaurantImage.setImageResource(foodItem.getImageResourceId());
+        Glide.with(context)
+                .load(item.getImageUrl())
+                .into(holder.image);
     }
 
     @Override
     public int getItemCount() {
-        return foodItemList.size();
+        return foodList.size();
     }
 
-    public static class FoodItemViewHolder extends RecyclerView.ViewHolder {
+    public static class FoodViewHolder extends RecyclerView.ViewHolder {
+        TextView name, description, rating, deliveryInfo, deliveryTime;
+        ImageView image;
 
-        FoodItemLayoutBinding binding;
-
-        public FoodItemViewHolder(@NonNull FoodItemLayoutBinding binding) {
-            super(binding.getRoot());
-            this.binding = binding;
+        public FoodViewHolder(@NonNull View itemView) {
+            super(itemView);
+            name = itemView.findViewById(R.id.restaurantName);
+            description = itemView.findViewById(R.id.restaurantDescription);
+            rating = itemView.findViewById(R.id.ratingText);
+            deliveryInfo = itemView.findViewById(R.id.deliveryInfo);
+            deliveryTime = itemView.findViewById(R.id.deliveryTime);
+            image = itemView.findViewById(R.id.restaurantImage);
         }
     }
 }
