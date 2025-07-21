@@ -9,7 +9,6 @@ public class FoodItem {
     private String deliveryTime;
 
     public FoodItem() {
-        // Required empty constructor for Firebase
     }
 
     public FoodItem(String restaurantName, String foodDescription, String imageUrl,

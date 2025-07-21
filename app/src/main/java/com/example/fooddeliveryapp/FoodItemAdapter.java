@@ -1,65 +1,63 @@
 package com.example.fooddeliveryapp;
 
-import android.content.Context;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-
-
+import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodViewHolder> {
+public class MainActivity extends AppCompatActivity {
 
-    private final Context context;
-    private final List<FoodItem> foodList;
-
-    public FoodItemAdapter(Context context, List<FoodItem> foodList) {
-        this.context = context;
-        this.foodList = foodList;
-    }
-
-    @NonNull
-    @Override
-    public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.food_item_layout, parent, false);
-        return new FoodViewHolder(view);
-    }
+    private RecyclerView recyclerView;
+    private FoodItemAdapter adapter;
+    private List<FoodItem> foodItemList;
+    private FirebaseFirestore db;
 
     @Override
-    public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
-        FoodItem item = foodList.get(position);
-        holder.name.setText(item.getRestaurantName());
-        holder.description.setText(item.getFoodDescription());
-        holder.rating.setText(item.getRating());
-        holder.deliveryInfo.setText(item.getDeliveryInfo());
-        holder.deliveryTime.setText(item.getDeliveryTime());
-        
-        Glide.with(context)
-                .load(item.getImageUrl())
-                .into(holder.image);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        recyclerView = findViewById(R.id.recyclerView); // Make sure this ID exists in your activity_main.xml
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        foodItemList = new ArrayList<>();
+        adapter = new FoodItemAdapter(this, foodItemList);
+        recyclerView.setAdapter(adapter);
+
+        db = FirebaseFirestore.getInstance();
+
+        fetchFoodItemsFromFirestore();
     }
 
-    @Override
-    public int getItemCount() {
-        return foodList.size();
-    }
-
-    public static class FoodViewHolder extends RecyclerView.ViewHolder {
-        TextView name, description, rating, deliveryInfo, deliveryTime;
-        ImageView image;
-
-        public FoodViewHolder(@NonNull View itemView) {
-            super(itemView);
-            name = itemView.findViewById(R.id.restaurantName);
-            image = itemView.findViewById(R.id.restaurantImage);
-        }
+    private void fetchFoodItemsFromFirestore() {
+        db.collection("foodItems")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        QuerySnapshot snapshot = task.getResult();
+                        if (snapshot != null && !snapshot.isEmpty()) {
+                            foodItemList.clear();
+                            for (DocumentSnapshot document : snapshot.getDocuments()) {
+                                FoodItem item = document.toObject(FoodItem.class);
+                                if (item != null) {
+                                    foodItemList.add(item);
+                                }
+                            }
+                            adapter.notifyDataSetChanged();
+                        }
+                    } else {
+                        Log.e("FirestoreError", "Error getting documents: ", task.getException());
+                    }
+                });
     }
 }

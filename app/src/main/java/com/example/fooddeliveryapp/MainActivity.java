@@ -1,85 +1,74 @@
-package com.example.fooddeliveryapp;
+package com.example.foodapp;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.fooddeliveryapp.databinding.ActivityMainBinding;
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ActivityMainBinding binding;
-    private FirebaseAuth mAuth;
     private FirebaseFirestore db;
-    private List<FoodItem> foodItemList;
-    private FoodItemAdapter adapter;
+    private RecyclerView restaurantsRecyclerView;
+    private RestaurantAdapter restaurantAdapter;
+    private List<Restaurant> restaurantList = new ArrayList<>();
+    private TextView userEmailText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
+        setContentView(R.layout.activity_main);
 
-        mAuth = FirebaseAuth.getInstance();
+        // Initialize Firestore
         db = FirebaseFirestore.getInstance();
 
-        loadUserProfile();
+        // Link UI elements
+        userEmailText = findViewById(R.id.userEmailText);
+        restaurantsRecyclerView = findViewById(R.id.restaurantsRecyclerView);
+        restaurantsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        restaurantAdapter = new RestaurantAdapter(this, restaurantList);
+        restaurantsRecyclerView.setAdapter(restaurantAdapter);
 
-        foodItemList = new ArrayList<>();
-        adapter = new FoodItemAdapter(this, foodItemList);
-        binding.restaurantsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        binding.restaurantsRecyclerView.setAdapter(adapter);
+        // Show a fake loading text (optional)
+        userEmailText.setText("Fetching food items...");
 
-        fetchDataFromFirestore();
+        // Fetch data from Firestore
+        fetchRestaurantsFromFirestore();
     }
 
-    @SuppressLint("SetTextI18n")
-    private void loadUserProfile() {
-        String uid = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+    private void fetchRestaurantsFromFirestore() {
+        CollectionReference restaurantRef = db.collection("restaurants");
 
-        db.collection("users")
-                .document(uid)
-                .get()
-                .addOnSuccessListener(documentSnapshot -> {
-                    if (documentSnapshot.exists()) {
-                        String email = documentSnapshot.getString("email");
-                        binding.userEmailText.setText(getString(R.string.logged_in_as) + email);
-                    }
-                })
-                .addOnFailureListener(e -> Toast.makeText(MainActivity.this, "Failed to load user info", Toast.LENGTH_SHORT).show());
-    }
+        restaurantRef.get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                restaurantList.clear(); // Clear old data
+                for (QueryDocumentSnapshot doc : task.getResult()) {
+                    String name = doc.getString("name");
+                    String description = doc.getString("description");
+                    String imageUrl = doc.getString("imageUrl");
 
-    @SuppressLint("NotifyDataSetChanged")
-    private void fetchDataFromFirestore() {
-        db.collection("FoodItems")
-                .get()
-                .addOnSuccessListener(queryDocumentSnapshots -> {
-                    foodItemList.clear();
-                    for (QueryDocumentSnapshot doc : queryDocumentSnapshots) {
-                        String restaurantName = doc.getString("restaurantName");
-                        String foodDescription = doc.getString("foodDescription");
-                        String imageUrl = doc.getString("imageUrl");
-                        String rating = doc.getString("rating");
-                        String deliveryInfo = doc.getString("deliveryInfo");
-                        String deliveryTime = doc.getString("deliveryTime");
-
-                        FoodItem foodItem = new FoodItem(
-                                restaurantName, foodDescription, imageUrl, rating, deliveryInfo, deliveryTime
-                        );
-                        foodItemList.add(foodItem);
-                    }
-                    adapter.notifyDataSetChanged();
-                })
-                .addOnFailureListener(e -> Toast.makeText(MainActivity.this, "Failed to load food items", Toast.LENGTH_SHORT).show());
+                    Restaurant restaurant = new Restaurant(name, description, imageUrl);
+                    restaurantList.add(restaurant);
+                }
+                restaurantAdapter.notifyDataSetChanged();
+                userEmailText.setText("Fetched " + restaurantList.size() + " items!");
+            } else {
+                Log.e("FirestoreError", "Error getting documents: ", task.getException());
+                Toast.makeText(MainActivity.this, "Failed to fetch data.", Toast.LENGTH_SHORT).show();
+                userEmailText.setText("Failed to load items");
+            }
+        });
     }
 }
