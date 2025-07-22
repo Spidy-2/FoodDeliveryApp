@@ -99,4 +99,6 @@
     <string name="hotdog">Hot Dog</string>
     <string name="Burger">Burger</string>
     <string name="Pizza">Pizza</string>
+    <string name="food_name">Food Name</string>
+    <string name="food_description">Food Description</string>
 </resources>

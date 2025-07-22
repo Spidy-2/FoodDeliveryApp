@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     card_view:cardCornerRadius="12dp"
@@ -18,13 +19,14 @@
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_background" />
+            android:src="@drawable/ic_launcher_background"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/foodNameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Food Name"
+            android:text="@string/food_name"
             android:textStyle="bold"
             android:textSize="18sp"
             android:layout_marginTop="8dp" />
@@ -33,7 +35,7 @@
             android:id="@+id/foodDescriptionText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Food Description"
+            android:text="@string/food_description"
             android:textSize="14sp"
             android:layout_marginTop="4dp" />
     </LinearLayout>
