@@ -1,47 +1,29 @@
 package com.example.fooddeliveryapp;
 
 public class FoodItem {
-    private String restaurantName;
-    private String foodDescription;
+    private String name;
+    private String description;
     private String imageUrl;
-    private String rating;
-    private String deliveryInfo;
-    private String deliveryTime;
 
     public FoodItem() {
+
     }
 
-    public FoodItem(String restaurantName, String foodDescription, String imageUrl,
-                    String rating, String deliveryInfo, String deliveryTime) {
-        this.restaurantName = restaurantName;
-        this.foodDescription = foodDescription;
+    public FoodItem(String name, String description, String imageUrl) {
+        this.name = name;
+        this.description = description;
         this.imageUrl = imageUrl;
-        this.rating = rating;
-        this.deliveryInfo = deliveryInfo;
-        this.deliveryTime = deliveryTime;
     }
 
-    public String getRestaurantName() {
-        return restaurantName;
+    public String getName() {
+        return name;
     }
 
-    public String getFoodDescription() {
-        return foodDescription;
+    public String getDescription() {
+        return description;
     }
 
     public String getImageUrl() {
         return imageUrl;
-    }
-
-    public String getRating() {
-        return rating;
-    }
-
-    public String getDeliveryInfo() {
-        return deliveryInfo;
-    }
-
-    public String getDeliveryTime() {
-        return deliveryTime;
     }
 }

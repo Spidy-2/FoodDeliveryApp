@@ -1,91 +1,102 @@
 <resources>
-    <string name="app_name">FoodDeliveryApp</string>
-    <string name="forgot_password">Forgot Password</string>
-    <string name="email">Email</string>
-    <string name="reset_password">Reset Password</string>
-    <string name="login">Login</string>
-    <string name="Email">Email</string>
-    <string name="password">Password</string>
-    <string name="Login">Login</string>
-    <string name="Forgot_password">Forgot Password?</string>
-    <string name="sign_up">Sign Up</string>
-    <string name="deliver_to_shri">Deliver to Shri</string>
-    <string name="hey_shri_good_afternoon">Hey Shri , Good Afternoon!</string>
-    <string name="search_dishes_restaurants">Search dishes, restaurants</string>
-    <string name="all_categories">All Categories</string>
-    <string name="see_all"><![CDATA[See All >]]></string>
-    <string name="all">All</string>
-    <string name="hot_dog">Hot Dog</string>
-    <string name="burger">Burger</string>
-    <string name="pizza">Pizza</string>
-    <string name="confirm_location">Confirm Location</string>
-    <string name="longitude">Longitude:</string>
-    <string name="latitude">Latitude:</string>
-    <string name="address">Address:</string>
-    <string name="location">Location</string>
-    <string name="rating">Rating</string>
-    <string name="_4_7">4.7</string>
-    <string name="details">Details</string>
+    <string name="app_name" translatable="false">FoodDeliveryApp</string>
+
+    <string name="email" translatable="false">Email</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="forgot_password" translatable="false">Forgot Password</string>
+    <string name="reset_password" translatable="false">Reset Password</string>
+    <string name="forgot_password_question" translatable="false">Forgot Password?</string>
+    <string name="sign_up" translatable="false">Sign Up</string>
+    <string name="already_have_an_account_login" translatable="false">Already have an account? Login</string>
+
+    <string name="deliver_to_shri" translatable="false">Deliver to Shri</string>
+    <string name="hey_shri_good_afternoon" translatable="false">Hey Shri, Good Afternoon!</string>
+    <string name="search_dishes_restaurants" translatable="false">Search dishes, restaurants</string>
+    <string name="all_categories" translatable="false">All Categories</string>
+    <string name="see_all" translatable="false"><![CDATA[See All >]]></string>
+    <string name="all" translatable="false">All</string>
+
+    <string name="hot_dog" translatable="false">Hot Dog</string>
+    <string name="burger" translatable="false">Burger</string>
+    <string name="pizza" translatable="false">Pizza</string>
+
+    <string name="confirm_location" translatable="false">Confirm Location</string>
+    <string name="longitude" translatable="false">Longitude:</string>
+    <string name="latitude" translatable="false">Latitude:</string>
+    <string name="address" translatable="false">Address:</string>
+    <string name="location" translatable="false">Location</string>
+
+    <string name="rating" translatable="false">Rating</string>
+    <string name="details" translatable="false">Details</string>
+    <string name="favorite" translatable="false">Favorite</string>
+    <string name="restaurant_logo" translatable="false">Restaurant Logo</string>
+    <string name="restaurant_name" translatable="false">Restaurant Name</string>
+    <string name="short_description_here" translatable="false">Short description here</string>
+    <string name="uttora_coffee_house" translatable="false">Uttora Coffee House</string>
+    <string name="pizza_calzone_european" translatable="false">Pizza Calzone European</string>
+    <string name="pizza_description" translatable="false">A calzone is an Italian oven-baked folded pizza. It is made with salted bread dough, baked in an oven and is stuffed with ingredients found in pizza.</string>
+
+    <string name="delivery" translatable="false">Delivery</string>
+    <string name="free" translatable="false">Free</string>
+    <string name="delivery_time" translatable="false">Delivery Time</string>
+    <string name="free_delivery" translatable="false">Free Delivery</string>
+    <string name="time" translatable="false">20 min</string>
+    <string name="_20_min" translatable="false">20 min</string>
+
+    <string name="add_to_cart" translatable="false">ADD TO CART</string>
+    <string name="plus" translatable="false">+</string>
+    <string name="minus" translatable="false">-</string>
+    <string name="_320_inr" translatable="false">320 INR</string>
+    <string name="size" translatable="false">SIZE:</string>
+    <string name="_10_quot" translatable="false">10"</string>
+    <string name="_14_quot" translatable="false">14"</string>
+    <string name="_16_quot" translatable="false">16"</string>
+
+    <string name="ingredients" translatable="false">INGREDIENTS</string>
+    <string name="ingredient" translatable="false">Ingredient</string>
+    <string name="ingredient1" translatable="false">Ingredient</string>
+    <string name="ingredient2" translatable="false">Ingredient</string>
+    <string name="ingredient_cheese" translatable="false">Cheese</string>
+    <string name="ingredient_tomato" translatable="false">Tomato</string>
+    <string name="ingredient_pepperoni" translatable="false">Pepperoni</string>
+    <string name="pepperoni" translatable="false">Pepperoni</string>
+    <string name="tomato" translatable="false">Tomato</string>
+    <string name="cheese" translatable="false">Cheese</string>
+
+    <string name="verification" translatable="false">Verification</string>
+    <string name="enter_the_verification_code_sent_to_your_email" translatable="false">Enter the verification code sent to your email.</string>
+    <string name="verification_code" translatable="false">Verification Code</string>
+    <string name="verify" translatable="false">Verify</string>
+
+    <string name="the_british_restaurant" translatable="false">The British Restaurant</string>
+    <string name="burger_chicken_wings" translatable="false">Burger - Chicken - Wings</string>
+
+    <string name="loading_user_info" translatable="false">Loading user info...</string>
+    <string name="logged_in_as" translatable="false">Logged in as:</string>
+
+    <string name="rating_4_7" translatable="false">Rating = 4.7</string>
+    <string name="text" translatable="false">4.7</string>
+    <string name="_4_7" translatable="false">4.7</string>
+    <string name="_4_5" translatable="false">⭐ 4.5</string>
+    <string name="time_20_min" translatable="false">Time = 20 mins</string>
+    <string name="size_10_inch" translatable="false">Size = 10 inch</string>
+    <string name="size_14_inch" translatable="false">Size = 14 inch</string>
+    <string name="size_16_inch" translatable="false">Size = 16 inch</string>
+    <string name="price_320_inr" translatable="false">Price = 320 INR</string>
+
+    <string name="back" translatable="false">Back</string>
+    <string name="todo" translatable="false">TODO</string>
+    <string name="todo1" translatable="false">TODO</string>
+
+    <string name="sign_up1" translatable="false">Sign Up</string>
+    <string name="email1" translatable="false">Email</string>
+    <string name="password1" translatable="false">Password</string>
+    <string name="sign_up2" translatable="false">Sign Up</string>
+    <string name="All">All</string>
+    <string name="menu">Menu</string>
+    <string name="notifications">Notifications</string>
+    <string name="hotdog">Hot Dog</string>
+    <string name="Burger">Burger</string>
     <string name="Pizza">Pizza</string>
-    <string name="favorite">Favorite</string>
-    <string name="restaurant_logo">Restaurant Logo</string>
-    <string name="uttora_coffe_house">Uttora Coffe House</string>
-    <string name="pizza_calzone_european">Pizza Calzone European</string>
-    <string name="a_calzone_is_an_italian_oven_baked_folded_pizza_it_is_made_with_salted_bread_dough_baked_in_an_oven_and_is_stuffed_with_ingredients_found_in_pizza">A calzone is an Italian oven-baked folded pizza. It is made with salted bread dough, baked in an oven and is stuffed with ingredients found in pizza.</string>
-    <string name="delivery">Delivery</string>
-    <string name="free">Free</string>
-    <string name="delivery_time">Delivery Time</string>
-    <string name="add_to_cart">ADD TO CART</string>
-    <string name="plus">+</string>
-    <string name="minus">-</string>
-    <string name="_320_inr">320 INR</string>
-    <string name="pepperoni">Pepperoni</string>
-    <string name="tomato">Tomato</string>
-    <string name="cheese">Cheese</string>
-    <string name="ingridients">INGRIDIENTS</string>
-    <string name="_16_quot">16\"</string>
-    <string name="_14_quot">14\"</string>
-    <string name="_10_quot">10\"</string>
-    <string name="size">SIZE:</string>
-    <string name="_20_min">20 min</string>
-    <string name="back">Back</string>
-    <string name="verification">Verification</string>
-    <string name="enter_the_verification_code_sent_to_your_email">Enter the verification code sent to your email.</string>
-    <string name="verification_code">Verification Code</string>
-    <string name="verify">Verify</string>
-    <string name="the_british_restaurant">The British Restaurant</string>
-    <string name="todo">TODO</string>
-    <string name="burger_chicken_wings">Burger - Chicken - Wings</string>
-    <string name="text">4.7</string>
-    <string name="free_delivery">Free Delivery</string>
-    <string name="time">20 min</string>
-    <string name="todo1">TODO</string>
-    <string name="sign_up1">Sign Up</string>
-    <string name="email1">Email</string>
-    <string name="password1">Password</string>
-    <string name="sign_up2">Sign Up</string>
-    <string name="already_have_an_account_login">Already have an account? Login</string>
-    <string name="ingredient">Ingredient</string>
-    <string name="ingredient1">Ingredient</string>
-    <string name="ingredient2">Ingredient</string>
-    <string name="rating_4_7">Rating=4.7</string>
-    <string name="time_20_min">Time = 20 mins</string>
-    <string name="size_10_inch">Size = 10 inch</string>
-    <string name="size_14_inch">Size = 14 inch</string>
-    <string name="size_16_inch">Size = 16 inch</string>
-    <string name="price_320_inr">Price = 320 INR</string>
-    <string name="ingredient_cheese">Cheese</string>
-    <string name="ingredient_tomato">Tomato</string>
-    <string name="ingredient_pepperoni">Pepperoni</string>
-
-
-
-
-
-    <string name="pizza_description">Pizza\n</string>
-    <string name="loading_user_info">Loading user info...</string>
-    <string name="logged_in_as">"Logged in as: "</string>
-
 </resources>
-
-                 

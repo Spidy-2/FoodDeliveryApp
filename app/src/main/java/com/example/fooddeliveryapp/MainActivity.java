@@ -2,26 +2,19 @@ package com.example.fooddeliveryapp;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.firebase.firestore.CollectionReference;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private FirebaseFirestore db;
-    private FoodItemAdapter foodItemAdapter;
-    private final List<FoodItem> foodItemList = new ArrayList<>();
+    private RestaurantAdapter restaurantAdapter;
+    private final List<Restaurant> restaurantList = new ArrayList<>();
     private TextView userEmailText;
 
     @SuppressLint("SetTextI18n")
@@ -30,47 +23,51 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize Firestore
-        db = FirebaseFirestore.getInstance();
-
-        // Link UI elements
         userEmailText = findViewById(R.id.userEmailText);
-        RecyclerView restaurantsRecyclerView = findViewById(R.id.restaurantsRecyclerView);
-        restaurantsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) RecyclerView restaurantRecyclerView = findViewById(R.id.restaurantRecyclerView);
+        restaurantRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // Setup adapter
-        foodItemAdapter = new FoodItemAdapter(this, foodItemList);
-        restaurantsRecyclerView.setAdapter(foodItemAdapter);
+        restaurantAdapter = new RestaurantAdapter(this, restaurantList);
+        restaurantRecyclerView.setAdapter(restaurantAdapter);
 
-        // Optional loading message
-        userEmailText.setText("Fetching food items...");
-
-        // Fetch from Firestore
-        fetchFoodItemsFromFirestore();
+        fetchDummyRestaurants();
     }
 
-    @SuppressLint("SetTextI18n")
-    private void fetchFoodItemsFromFirestore() {
-        CollectionReference restaurantRef = db.collection("restaurants");
+    @SuppressLint({"SetTextI18n", "NotifyDataSetChanged"})
+    private void fetchDummyRestaurants() {
+        restaurantList.clear();
 
-        restaurantRef.get().addOnCompleteListener(task -> {
-            if (task.isSuccessful()) {
-                foodItemList.clear(); // Clear old data
-                for (QueryDocumentSnapshot doc : task.getResult()) {
-                    String name = doc.getString("name");
-                    String description = doc.getString("description");
-                    String imageUrl = doc.getString("imageUrl");
+        restaurantList.add(new Restaurant(
+                "The British Bites",
+                "Burgers, Chicken Wings, Fast Food",
+                "https://cdn.pixabay.com/photo/2016/03/05/19/02/hamburger-1238246_960_720.jpg"
+        ));
 
-                    FoodItem foodItem = new FoodItem(name, description, imageUrl);
-                    foodItemList.add(foodItem);
-                }
-                foodItemAdapter.notifyDataSetChanged();
-                userEmailText.setText("Fetched " + foodItemList.size() + " items!");
-            } else {
-                Log.e("FirestoreError", "Error getting documents: ", task.getException());
-                Toast.makeText(MainActivity.this, "Failed to fetch data.", Toast.LENGTH_SHORT).show();
-                userEmailText.setText("Failed to load items");
-            }
-        });
+        restaurantList.add(new Restaurant(
+                "Spice Hub",
+                "Indian Curries, Tandoori, Naan",
+                "https://cdn.pixabay.com/photo/2017/06/02/18/24/indian-food-2367854_960_720.jpg"
+        ));
+
+        restaurantList.add(new Restaurant(
+                "Green Bowl",
+                "Healthy Salads & Vegan Meals",
+                "https://cdn.pixabay.com/photo/2017/09/02/13/26/salad-2706849_960_720.jpg"
+        ));
+
+        restaurantList.add(new Restaurant(
+                "Noodle Nest",
+                "Chinese Noodles, Momos & More",
+                "https://cdn.pixabay.com/photo/2015/04/08/13/13/food-712665_960_720.jpg"
+        ));
+
+        restaurantList.add(new Restaurant(
+                "Pizza Portal",
+                "Woodfired Pizza & Garlic Bread",
+                "https://cdn.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_960_720.jpg"
+        ));
+
+        restaurantAdapter.notifyDataSetChanged();
+        userEmailText.setText("Showing 5 dummy restaurants!");
     }
 }

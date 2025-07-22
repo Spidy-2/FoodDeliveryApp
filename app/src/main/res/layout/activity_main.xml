@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity">
-
 
     <TextView
         android:id="@+id/userEmailText"
@@ -30,7 +29,7 @@
             android:layout_height="30dp"
             android:src="@drawable/ic_menu"
             android:layout_alignParentStart="true"
-            tools:ignore="ContentDescription" />
+            android:contentDescription="@string/menu" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -45,27 +44,20 @@
                 android:layout_height="wrap_content"
                 android:text="@string/deliver_to_shri"
                 android:textSize="16sp" />
-
-
-
         </LinearLayout>
 
         <FrameLayout
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_alignParentRight="true"
-            tools:ignore="RtlHardcoded">
+            android:layout_alignParentEnd="true">
 
             <ImageView
                 android:id="@+id/notificationIcon"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_notifications"
-                tools:ignore="ContentDescription" />
-
-
+                android:contentDescription="@string/notifications" />
         </FrameLayout>
-
     </RelativeLayout>
 
     <TextView
@@ -82,10 +74,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:drawablePadding="8dp"
         android:hint="@string/search_dishes_restaurants"
+        android:drawableStart="@android:drawable/ic_menu_search"
+        android:drawablePadding="8dp"
         android:padding="12dp"
-        tools:ignore="TextFields"
+        android:inputType="text"
+        android:background="@android:drawable/editbox_background"
         android:autofillHints="" />
 
     <LinearLayout
@@ -110,7 +104,6 @@
             android:layout_height="wrap_content"
             android:text="@string/see_all"
             android:textColor="@android:color/holo_blue_dark" />
-
     </LinearLayout>
 
     <HorizontalScrollView
@@ -136,13 +129,12 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/ic_fire"
-                    tools:ignore="ContentDescription" />
+                    android:contentDescription="@string/All" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/all" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -157,13 +149,12 @@
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/ic_hotdog"
-                    tools:ignore="ContentDescription" />
+                    android:contentDescription="@string/hotdog" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/hot_dog" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -172,19 +163,18 @@
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:paddingEnd="16dp"
-                tools:ignore="RtlHardcoded,RtlSymmetry,UseCompoundDrawables">
+                tools:ignore="RtlSymmetry,UseCompoundDrawables">
 
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/ic_burger"
-                    tools:ignore="ContentDescription" />
+                    android:contentDescription="@string/Burger" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/burger" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -193,19 +183,18 @@
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:paddingEnd="16dp"
-                tools:ignore="RtlHardcoded,RtlSymmetry,UseCompoundDrawables">
+                tools:ignore="RtlSymmetry,UseCompoundDrawables">
 
                 <ImageView
                     android:layout_width="40dp"
                     android:layout_height="40dp"
                     android:src="@drawable/ic_pizza"
-                    tools:ignore="ContentDescription" />
+                    android:contentDescription="@string/Pizza" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/pizza" />
-
             </LinearLayout>
         </LinearLayout>
     </HorizontalScrollView>
@@ -213,6 +202,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/restaurantsRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp" />
 
 </LinearLayout>
