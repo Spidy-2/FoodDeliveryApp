@@ -78,6 +78,5 @@
     <string name="food_name" translatable="false">Food Name</string>
     <string name="food_description" translatable="false">Food Description</string>
     <string name="text">Text\n\n</string>
-    <string name="Pizza_Planet">Pizza Planet</string>
 
 </resources>
