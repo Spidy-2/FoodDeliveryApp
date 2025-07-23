@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:hint="@string/Email"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         app:layout_constraintTop_toBottomOf="@id/loginTitle"
         android:autofillHints="" />
@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/Login"
+        android:text="@string/login"
         app:layout_constraintTop_toBottomOf="@id/passwordEditText" />
 
     <TextView
@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/Forgot_password"
+        android:text="@string/forgot_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/loginButton" />
 

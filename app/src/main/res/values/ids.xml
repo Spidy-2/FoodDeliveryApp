@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <item name="restaurantVegOnly" type="id">VegOnly</item>
-    <item name="restaurantNameTextView" type="id">Name</item>
-    <item name="restaurantDescriptionTextView" type="id">Description</item>
-    <item name="restaurantImageView" type="id">Image</item>
-</resources>

@@ -9,7 +9,7 @@
         android:id="@+id/signupTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sign_up1"
+        android:text="@string/sign_up"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:hint="@string/email1"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         app:layout_constraintTop_toBottomOf="@id/signupTitle"
         android:autofillHints="" />
@@ -30,7 +30,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="@string/password1"
+        android:hint="@string/password"
         android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@id/signupEmailEditText"
         android:autofillHints="" />
@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/sign_up2"
+        android:text="@string/sign_up"
         app:layout_constraintTop_toBottomOf="@id/signupPasswordEditText" />
 
     <TextView

@@ -54,9 +54,9 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
         public RestaurantViewHolder(@NonNull View itemView) {
             super(itemView);
-            nameTextView = itemView.findViewById(R.id.restaurantNameTextView);
-            descriptionTextView = itemView.findViewById(R.id.restaurantDescriptionTextView);
-            imageView = itemView.findViewById(R.id.restaurantImageView);
+            nameTextView = itemView.findViewById(R.id.restaurantName);
+            descriptionTextView = itemView.findViewById(R.id.restaurantDescription);
+            imageView = itemView.findViewById(R.id.restaurantImage);
         }
     }
 }

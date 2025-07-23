@@ -1,5 +1,5 @@
-<resources>
-    <string name="app_name" translatable="false">FoodDeliveryApp</string>
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <string name="email" translatable="false">Email</string>
     <string name="password" translatable="false">Password</string>
@@ -10,11 +10,14 @@
     <string name="sign_up" translatable="false">Sign Up</string>
     <string name="already_have_an_account_login" translatable="false">Already have an account? Login</string>
 
+    <string name="app_name" translatable="false">Food Delivery App</string>
+    <string name="dummy_restaurant_info" translatable="false">Showing 5 dummy restaurants!</string>
+
     <string name="deliver_to_shri" translatable="false">Deliver to Shri</string>
     <string name="hey_shri_good_afternoon" translatable="false">Hey Shri, Good Afternoon!</string>
     <string name="search_dishes_restaurants" translatable="false">Search dishes, restaurants</string>
     <string name="all_categories" translatable="false">All Categories</string>
-    <string name="see_all" translatable="false"><![CDATA[See All >]]></string>
+    <string name="see_all" translatable="false">See All &gt;</string>
     <string name="all" translatable="false">All</string>
 
     <string name="hot_dog" translatable="false">Hot Dog</string>
@@ -35,34 +38,28 @@
     <string name="short_description_here" translatable="false">Short description here</string>
     <string name="uttora_coffee_house" translatable="false">Uttora Coffee House</string>
     <string name="pizza_calzone_european" translatable="false">Pizza Calzone European</string>
-    <string name="pizza_description" translatable="false">A calzone is an Italian oven-baked folded pizza. It is made with salted bread dough, baked in an oven and is stuffed with ingredients found in pizza.</string>
+    <string name="pizza_description" translatable="false">A calzone is an Italian oven-baked folded pizza...</string>
 
     <string name="delivery" translatable="false">Delivery</string>
     <string name="free" translatable="false">Free</string>
     <string name="delivery_time" translatable="false">Delivery Time</string>
     <string name="free_delivery" translatable="false">Free Delivery</string>
     <string name="time" translatable="false">20 min</string>
-    <string name="_20_min" translatable="false">20 min</string>
 
     <string name="add_to_cart" translatable="false">ADD TO CART</string>
     <string name="plus" translatable="false">+</string>
     <string name="minus" translatable="false">-</string>
-    <string name="_320_inr" translatable="false">320 INR</string>
+    <string name="price_320_inr" translatable="false">320 INR</string>
+
     <string name="size" translatable="false">SIZE:</string>
-    <string name="_10_quot" translatable="false">10"</string>
-    <string name="_14_quot" translatable="false">14"</string>
-    <string name="_16_quot" translatable="false">16"</string>
+    <string name="size_10_inch" translatable="false">10"</string>
+    <string name="size_14_inch" translatable="false">14"</string>
+    <string name="size_16_inch" translatable="false">16"</string>
 
     <string name="ingredients" translatable="false">INGREDIENTS</string>
-    <string name="ingredient" translatable="false">Ingredient</string>
-    <string name="ingredient1" translatable="false">Ingredient</string>
-    <string name="ingredient2" translatable="false">Ingredient</string>
     <string name="ingredient_cheese" translatable="false">Cheese</string>
     <string name="ingredient_tomato" translatable="false">Tomato</string>
     <string name="ingredient_pepperoni" translatable="false">Pepperoni</string>
-    <string name="pepperoni" translatable="false">Pepperoni</string>
-    <string name="tomato" translatable="false">Tomato</string>
-    <string name="cheese" translatable="false">Cheese</string>
 
     <string name="verification" translatable="false">Verification</string>
     <string name="enter_the_verification_code_sent_to_your_email" translatable="false">Enter the verification code sent to your email.</string>
@@ -75,30 +72,12 @@
     <string name="loading_user_info" translatable="false">Loading user info...</string>
     <string name="logged_in_as" translatable="false">Logged in as:</string>
 
-    <string name="rating_4_7" translatable="false">Rating = 4.7</string>
-    <string name="text" translatable="false">4.7</string>
-    <string name="_4_7" translatable="false">4.7</string>
-    <string name="_4_5" translatable="false">⭐ 4.5</string>
-    <string name="time_20_min" translatable="false">Time = 20 mins</string>
-    <string name="size_10_inch" translatable="false">Size = 10 inch</string>
-    <string name="size_14_inch" translatable="false">Size = 14 inch</string>
-    <string name="size_16_inch" translatable="false">Size = 16 inch</string>
-    <string name="price_320_inr" translatable="false">Price = 320 INR</string>
-
     <string name="back" translatable="false">Back</string>
-    <string name="todo" translatable="false">TODO</string>
-    <string name="todo1" translatable="false">TODO</string>
+    <string name="menu" translatable="false">Menu</string>
+    <string name="notifications" translatable="false">Notifications</string>
+    <string name="food_name" translatable="false">Food Name</string>
+    <string name="food_description" translatable="false">Food Description</string>
+    <string name="text">Text\n\n</string>
+    <string name="Pizza_Planet">Pizza Planet</string>
 
-    <string name="sign_up1" translatable="false">Sign Up</string>
-    <string name="email1" translatable="false">Email</string>
-    <string name="password1" translatable="false">Password</string>
-    <string name="sign_up2" translatable="false">Sign Up</string>
-    <string name="All">All</string>
-    <string name="menu">Menu</string>
-    <string name="notifications">Notifications</string>
-    <string name="hotdog">Hot Dog</string>
-    <string name="Burger">Burger</string>
-    <string name="Pizza">Pizza</string>
-    <string name="food_name">Food Name</string>
-    <string name="food_description">Food Description</string>
 </resources>

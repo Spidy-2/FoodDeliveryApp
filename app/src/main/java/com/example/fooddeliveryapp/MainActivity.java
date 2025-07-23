@@ -11,9 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private RestaurantAdapter restaurantAdapter;
+
+
     private final List<Restaurant> restaurantList = new ArrayList<>();
     private TextView userEmailText;
 
@@ -23,13 +26,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        userEmailText = findViewById(R.id.userEmailText);
-        @SuppressLint({"MissingInflatedId", "LocalSuppress"}) RecyclerView restaurantRecyclerView = findViewById(R.id.restaurantRecyclerView);
-        restaurantRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        userEmailText = findViewById(R.id.userEmailText);
+       RecyclerView restaurantRecyclerView = findViewById(R.id.restaurantsRecyclerView);
+        restaurantRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         restaurantAdapter = new RestaurantAdapter(this, restaurantList);
         restaurantRecyclerView.setAdapter(restaurantAdapter);
 
+
+        
         fetchDummyRestaurants();
     }
 
