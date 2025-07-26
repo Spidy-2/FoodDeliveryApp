@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,6 +14,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="12dp">
+
+
 
         <ImageView
             android:id="@+id/restaurantImage"
@@ -49,13 +52,14 @@
                 android:textSize="14sp"
                 android:textColor="#777777" />
 
+
             <TextView
                 android:id="@+id/restaurantRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/rating"
                 android:textSize="14sp"
-                android:textColor="#FFA500"
+                android:textColor="#B63300"
                 android:layout_marginTop="4dp"/>
         </LinearLayout>
     </LinearLayout>
