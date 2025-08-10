@@ -18,10 +18,14 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.ViewHo
     private final Context context;
     private final List<FoodItem> foodItemList;
 
+
     public FoodItemAdapter(Context context, List<FoodItem> foodItemList) {
         this.context = context;
         this.foodItemList = foodItemList;
     }
+
+
+
 
     @NonNull
     @Override

@@ -12,6 +12,9 @@
         android:scaleType="centerCrop"
         android:src="@drawable/restaurant3"/>
 
+
+
+
     <TextView
         android:id="@+id/restaurantName"
         android:layout_width="wrap_content"

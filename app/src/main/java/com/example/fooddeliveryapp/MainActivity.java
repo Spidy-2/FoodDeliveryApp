@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
         restaurantRecyclerView.setAdapter(restaurantAdapter);
 
 
-        
         fetchDummyRestaurants();
     }
 
